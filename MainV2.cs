@@ -395,16 +395,13 @@ namespace MissionPlanner
 
         public void updateAdvanced(object sender, EventArgs e)
         {
-            if (Advanced == false)
-            {
-                MenuTerminal.Visible = false;
-                MenuSimulation.Visible = false;
-            }
-            else
-            {
-                MenuTerminal.Visible = true;
-                MenuSimulation.Visible = true;
-            }
+            MenuFlightData.Visible = true && comPort.BaseStream.IsOpen;
+            MenuFlightPlanner.Visible = true;
+            MenuConfigTune.Visible = true && (comPort.BaseStream.IsOpen || Advanced);
+            MenuInitConfig.Visible = true && comPort.BaseStream.IsOpen;
+            MenuHelp.Visible = true;
+            MenuSimulation.Visible = Advanced;
+            MenuTerminal.Visible = Advanced;
         }
 
         public MainV2()
@@ -812,12 +809,6 @@ namespace MissionPlanner
 
             if (Program.Logo != null && Program.name == "VVVVZ")
             {
-                MenuDonate.Click -= this.toolStripMenuItem1_Click;
-                MenuDonate.Text = "";
-                MenuDonate.Image = Program.Logo;
-
-                MenuDonate.Click += MenuCustom_Click;
-
                 MenuFlightData.Visible = false;
                 MenuFlightPlanner.Visible = true;
                 MenuConfigTune.Visible = false;
@@ -825,12 +816,6 @@ namespace MissionPlanner
                 MenuInitConfig.Visible = false;
                 MenuSimulation.Visible = false;
                 MenuTerminal.Visible = false;
-            }
-            else if (Program.Logo != null && Program.names.Contains(Program.name))
-            {
-                MenuDonate.Click -= this.toolStripMenuItem1_Click;
-                MenuDonate.Text = "";
-                MenuDonate.Image = Program.Logo;
             }
 
             Application.DoEvents();
@@ -927,8 +912,6 @@ namespace MissionPlanner
             MenuTerminal.Image = displayicons.terminal;
             MenuConnect.Image = displayicons.connect;
             MenuHelp.Image = displayicons.help;
-            MenuDonate.Image = displayicons.donate;
-
 
             MenuFlightData.ForeColor = ThemeManager.TextColor;
             MenuFlightPlanner.ForeColor = ThemeManager.TextColor;
@@ -938,7 +921,6 @@ namespace MissionPlanner
             MenuTerminal.ForeColor = ThemeManager.TextColor;
             MenuConnect.ForeColor = ThemeManager.TextColor;
             MenuHelp.ForeColor = ThemeManager.TextColor;
-            MenuDonate.ForeColor = ThemeManager.TextColor;
         }
 
         void MenuCustom_Click(object sender, EventArgs e)
@@ -948,10 +930,10 @@ namespace MissionPlanner
                 MenuFlightData.Visible = true;
                 MenuFlightPlanner.Visible = true;
                 MenuConfigTune.Visible = true;
-                MenuHelp.Visible = true;
                 MenuInitConfig.Visible = true;
-                MenuSimulation.Visible = true;
-                MenuTerminal.Visible = true;
+                MenuHelp.Visible = true;
+                MenuSimulation.Visible = Advanced;
+                MenuTerminal.Visible = Advanced;
             }
             else
             {
@@ -960,10 +942,10 @@ namespace MissionPlanner
                     MenuFlightData.Visible = true;
                     MenuFlightPlanner.Visible = true;
                     MenuConfigTune.Visible = true;
-                    MenuHelp.Visible = true;
                     MenuInitConfig.Visible = true;
-                    MenuSimulation.Visible = true;
-                    MenuTerminal.Visible = true;
+                    MenuHelp.Visible = true;
+                    MenuSimulation.Visible = Advanced;
+                    MenuTerminal.Visible = Advanced;
                 }
             }
         }
@@ -1162,6 +1144,9 @@ namespace MissionPlanner
             catch
             {
             }
+
+            if (AdvancedChanged != null)
+                AdvancedChanged(null, EventArgs.Empty);
 
             this.MenuConnect.Image = global::MissionPlanner.Properties.Resources.light_connect_icon;
         }
@@ -1447,6 +1432,10 @@ namespace MissionPlanner
                     }
                 }
 
+
+                if (AdvancedChanged != null)
+                    AdvancedChanged(null, EventArgs.Empty);
+
                 // set connected icon
                 this.MenuConnect.Image = displayicons.disconnect;
             }
@@ -1506,6 +1495,11 @@ namespace MissionPlanner
             if (comPort.BaseStream.IsOpen)
             {
                 doDisconnect(comPort);
+
+                // Volta para o FlightPlanner 
+                this.PerformLayout();
+                MenuFlightPlanner_Click(this, e);
+                MainMenu_ItemClicked(this, new ToolStripItemClickedEventArgs(MenuFlightPlanner));
             }
             else
             {
@@ -2478,8 +2472,8 @@ namespace MissionPlanner
             else
             {
                 this.PerformLayout();
-                MenuFlightData_Click(this, e);
-                MainMenu_ItemClicked(this, new ToolStripItemClickedEventArgs(MenuFlightData));
+                MenuFlightPlanner_Click(this, e);
+                MainMenu_ItemClicked(this, new ToolStripItemClickedEventArgs(MenuFlightPlanner));
             }
 
             // for long running tasks using own threads.
@@ -3068,20 +3062,7 @@ namespace MissionPlanner
             ProcessCmdKey(ref temp, e.KeyData);
             Console.WriteLine("MainV2_KeyDown " + e.ToString());
         }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(
-                    "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mich146%40hotmail%2ecom&lc=AU&item_name=Michael%20Oborne&no_note=0&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest");
-            }
-            catch
-            {
-                CustomMessageBox.Show("Link open failed. check your default webpage association");
-            }
-        }
-
+        
         [StructLayout(LayoutKind.Sequential)]
         internal class DEV_BROADCAST_HDR
         {
