@@ -3535,6 +3535,7 @@
     <None Include="Resources\redsinglecopter2.png" />
     <None Include="Resources\FW icons 2013+logos-011.png" />
     <None Include="Resources\FW icons 2013+logos-012.png" />
+    <None Include="Resources\bggreen.jpg" />
     <Content Include="Scripts\example7.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

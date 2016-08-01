@@ -861,13 +861,7 @@ namespace MissionPlanner
         void switchlight(menuicons icons)
         {
             displayicons = icons;
-
-            MainMenu.BackColor = SystemColors.MenuBar;
             
-            //ThemeManager.ApplyThemeTo(MainMenu);
-
-            MainMenu.BackgroundImage = displayicons.bg;
-
             MenuFlightData.Image = displayicons.fd;
             MenuFlightPlanner.Image = displayicons.fp;
             MenuInitConfig.Image = displayicons.config_tuning;
@@ -876,15 +870,6 @@ namespace MissionPlanner
             MenuTerminal.Image = displayicons.terminal;
             MenuConnect.Image = displayicons.connect;
             MenuHelp.Image = displayicons.help;
-
-            MenuFlightData.ForeColor    = Color.Black;
-            MenuFlightPlanner.ForeColor = Color.Black;
-            MenuInitConfig.ForeColor    = Color.Black;
-            MenuSimulation.ForeColor    = Color.Black;
-            MenuConfigTune.ForeColor    = Color.Black;
-            MenuTerminal.ForeColor      = Color.Black;
-            MenuConnect.ForeColor       = Color.Black;
-            MenuHelp.ForeColor          = Color.Black;
         }
 
         void MenuCustom_Click(object sender, EventArgs e)
@@ -1859,7 +1844,7 @@ namespace MissionPlanner
                         {
                             this.MenuConnect.Image = displayicons.disconnect;
                             this.MenuConnect.Image.Tag = "Disconnect";
-                            this.MenuConnect.Text = Strings.DISCONNECTc;
+                            this.MenuConnect.Text = "Desconectar"; // Strings.DISCONNECTc;
                             _connectionControl.IsConnected(true);
                         });
                     }
@@ -1872,7 +1857,7 @@ namespace MissionPlanner
                         {
                             this.MenuConnect.Image = displayicons.connect;
                             this.MenuConnect.Image.Tag = "Connect";
-                            this.MenuConnect.Text = Strings.CONNECTc;
+                            this.MenuConnect.Text = "Conectar"; //Strings.CONNECTc;
                             _connectionControl.IsConnected(false);
                             if (_connectionStats != null)
                             {
@@ -3195,12 +3180,12 @@ namespace MissionPlanner
             {
                 if (e.ClickedItem == item)
                 {
-                    item.BackColor = Color.White;
+                    item.BackColor = Color.Transparent;
                 }
                 else
                 {
                     item.BackColor = Color.Transparent;
-                    item.BackgroundImage = displayicons.bg; //.BackColor = Color.Black;
+                    //item.BackgroundImage = //displayicons.bg; //.BackColor = Color.Black;
                 }
             }
             //MainMenu.BackColor = Color.Black;
