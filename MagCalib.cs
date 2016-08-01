@@ -160,7 +160,7 @@ namespace MissionPlanner
             {
                 prd.btnCancel.Text = "Done";
 
-                Utilities.ThemeManager.ApplyThemeTo(prd);
+                //Utilities.ThemeManager.ApplyThemeTo(prd);
 
                 prd.DoWork += prd_DoWork;
 

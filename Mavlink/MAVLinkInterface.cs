@@ -328,7 +328,7 @@ namespace MissionPlanner
                 frmProgressReporter.DoWork += FrmProgressReporterDoWorkNOParams;
             }
             frmProgressReporter.UpdateProgressAndStatus(-1, Strings.MavlinkConnecting);
-            ThemeManager.ApplyThemeTo(frmProgressReporter);
+            //ThemeManager.ApplyThemeTo(frmProgressReporter);
 
             frmProgressReporter.RunBackgroundOperationAsync();
 
@@ -1047,7 +1047,7 @@ Please check the following
 
             frmProgressReporter.DoWork += FrmProgressReporterGetParams;
             frmProgressReporter.UpdateProgressAndStatus(-1, Strings.GettingParamsD);
-            ThemeManager.ApplyThemeTo(frmProgressReporter);
+            //ThemeManager.ApplyThemeTo(frmProgressReporter);
 
             frmProgressReporter.RunBackgroundOperationAsync();
 

@@ -15,7 +15,7 @@ namespace MissionPlanner.Controls
         {
             InitializeComponent();
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
 
             timer1.Start();
         }

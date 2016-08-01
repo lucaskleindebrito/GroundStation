@@ -567,48 +567,12 @@ namespace MissionPlanner
             }
 
             ChangeUnits();
-
-            if (Settings.Instance["theme"] != null)
-            {
-                try
-                {
-                    ThemeManager.SetTheme(
-                        (ThemeManager.Themes)
-                            Enum.Parse(typeof (ThemeManager.Themes), Settings.Instance["theme"].ToString()));
-                }
-                catch (Exception exception)
-                {
-                    log.Error(exception);
-                }
-
-                if (ThemeManager.CurrentTheme == ThemeManager.Themes.Custom)
-                {
-                    try
-                    {
-                        ThemeManager.BGColor = Color.FromArgb(int.Parse(Settings.Instance["theme_bg"].ToString()));
-                        ThemeManager.ControlBGColor = Color.FromArgb(int.Parse(Settings.Instance["theme_ctlbg"].ToString()));
-                        ThemeManager.TextColor = Color.FromArgb(int.Parse(Settings.Instance["theme_text"].ToString()));
-                        ThemeManager.ButBG = Color.FromArgb(int.Parse(Settings.Instance["theme_butbg"].ToString()));
-                        ThemeManager.ButBorder = Color.FromArgb(int.Parse(Settings.Instance["theme_butbord"].ToString()));
-                    }
-                    catch
-                    {
-                        log.Error("Bad Custom theme - reset to standard");
-                        ThemeManager.SetTheme(ThemeManager.Themes.BurntKermit);
-                    }
-                }
-
-                if (ThemeManager.CurrentTheme == ThemeManager.Themes.HighContrast)
-                {
-                    switchlight(new menuicons2());
-                }
-            }
-
+            
             if (Settings.Instance["showairports"] != null)
             {
                 MainV2.ShowAirports = bool.Parse(Settings.Instance["showairports"]);
             }
-
+                    
             // set default
             ShowTFR = true;
             // load saved
@@ -900,7 +864,7 @@ namespace MissionPlanner
 
             MainMenu.BackColor = SystemColors.MenuBar;
             
-            ThemeManager.ApplyThemeTo(MainMenu);
+            //ThemeManager.ApplyThemeTo(MainMenu);
 
             MainMenu.BackgroundImage = displayicons.bg;
 
@@ -913,14 +877,14 @@ namespace MissionPlanner
             MenuConnect.Image = displayicons.connect;
             MenuHelp.Image = displayicons.help;
 
-            MenuFlightData.ForeColor = ThemeManager.TextColor;
-            MenuFlightPlanner.ForeColor = ThemeManager.TextColor;
-            MenuInitConfig.ForeColor = ThemeManager.TextColor;
-            MenuSimulation.ForeColor = ThemeManager.TextColor;
-            MenuConfigTune.ForeColor = ThemeManager.TextColor;
-            MenuTerminal.ForeColor = ThemeManager.TextColor;
-            MenuConnect.ForeColor = ThemeManager.TextColor;
-            MenuHelp.ForeColor = ThemeManager.TextColor;
+            MenuFlightData.ForeColor    = Color.Black;
+            MenuFlightPlanner.ForeColor = Color.Black;
+            MenuInitConfig.ForeColor    = Color.Black;
+            MenuSimulation.ForeColor    = Color.Black;
+            MenuConfigTune.ForeColor    = Color.Black;
+            MenuTerminal.ForeColor      = Color.Black;
+            MenuConnect.ForeColor       = Color.Black;
+            MenuHelp.ForeColor          = Color.Black;
         }
 
         void MenuCustom_Click(object sender, EventArgs e)
@@ -991,7 +955,7 @@ namespace MissionPlanner
                 this.connectionStatsForm.Controls.Clear();
                 _connectionStats = new ConnectionStats(comPort);
                 this.connectionStatsForm.Controls.Add(_connectionStats);
-                ThemeManager.ApplyThemeTo(this.connectionStatsForm);
+                //ThemeManager.ApplyThemeTo(this.connectionStatsForm);
             }
         }
 
@@ -1018,7 +982,7 @@ namespace MissionPlanner
             }
 
             this.connectionStatsForm.Show();
-            ThemeManager.ApplyThemeTo(this.connectionStatsForm);
+            //ThemeManager.ApplyThemeTo(this.connectionStatsForm);
         }
 
         private void CMB_serialport_Click(object sender, EventArgs e)
@@ -2578,7 +2542,7 @@ namespace MissionPlanner
                 else if (File.Exists(Program.args[0]) && Program.args[0].ToLower().EndsWith(".bin"))
                 {
                     LogBrowse logbrowse = new LogBrowse();
-                    ThemeManager.ApplyThemeTo(logbrowse);
+                    //ThemeManager.ApplyThemeTo(logbrowse);
                     logbrowse.logfilename = Program.args[0];
                     logbrowse.Show(this);
                     logbrowse.TopMost = true;
@@ -2790,7 +2754,7 @@ namespace MissionPlanner
             if (keyData == (Keys.Control | Keys.F)) // temp
             {
                 Form frm = new temp();
-                ThemeManager.ApplyThemeTo(frm);
+                //ThemeManager.ApplyThemeTo(frm);
                 frm.Show();
                 return true;
             }
@@ -2802,7 +2766,7 @@ namespace MissionPlanner
             if (keyData == (Keys.Control | Keys.G)) // nmea out
             {
                 Form frm = new SerialOutputNMEA();
-                ThemeManager.ApplyThemeTo(frm);
+                //ThemeManager.ApplyThemeTo(frm);
                 frm.Show();
                 return true;
             }
@@ -3231,7 +3195,7 @@ namespace MissionPlanner
             {
                 if (e.ClickedItem == item)
                 {
-                    item.BackColor = ThemeManager.ControlBGColor;
+                    item.BackColor = Color.White;
                 }
                 else
                 {

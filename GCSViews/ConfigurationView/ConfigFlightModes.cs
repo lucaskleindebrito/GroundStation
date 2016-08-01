@@ -257,7 +257,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
             foreach (var ctl in fmodelist)
             {
-                ThemeManager.ApplyThemeTo(ctl);
+                //ThemeManager.ApplyThemeTo(ctl);
             }
 
             var no = readSwitch(pwm);

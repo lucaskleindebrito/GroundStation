@@ -245,7 +245,7 @@ namespace MissionPlanner.Joystick
 
                         MainV2.joystick = joy;
 
-                        ThemeManager.ApplyThemeTo(this);
+                        //ThemeManager.ApplyThemeTo(this);
 
                         CMB_joysticks.SelectedIndex = CMB_joysticks.Items.IndexOf(joy.name);
                     }

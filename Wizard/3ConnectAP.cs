@@ -101,7 +101,7 @@ namespace MissionPlanner.Wizard
 
                 pdr.DoWork += pdr_DoWork;
 
-                ThemeManager.ApplyThemeTo(pdr);
+                //ThemeManager.ApplyThemeTo(pdr);
 
                 pdr.RunBackgroundOperationAsync();
 

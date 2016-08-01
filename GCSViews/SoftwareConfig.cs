@@ -83,7 +83,7 @@ namespace MissionPlanner.GCSViews
                 }
 
                 // apply theme before trying to display it
-                ThemeManager.ApplyThemeTo(this);
+                //ThemeManager.ApplyThemeTo(this);
 
                 // remeber last page accessed
                 foreach (BackstageViewPage page in backstageView.Pages)

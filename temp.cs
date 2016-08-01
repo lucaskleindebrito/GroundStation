@@ -777,7 +777,7 @@ namespace MissionPlanner
         private void BUT_follow_me_Click(object sender, EventArgs e)
         {
             FollowMe si = new FollowMe();
-            ThemeManager.ApplyThemeTo((Form) si);
+            //ThemeManager.ApplyThemeTo((Form) si);
             si.Show();
         }
 
@@ -975,7 +975,7 @@ namespace MissionPlanner
         private void BUT_movingbase_Click(object sender, EventArgs e)
         {
             MovingBase si = new MovingBase();
-            ThemeManager.ApplyThemeTo((Form) si);
+            //ThemeManager.ApplyThemeTo((Form) si);
             si.Show();
         }
 

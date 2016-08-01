@@ -27,7 +27,7 @@ namespace MissionPlanner.Wizard
 
             InitializeComponent();
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
 
             config.Clear();
 

@@ -133,7 +133,7 @@ namespace MissionPlanner.GCSViews
                 }
             }
 
-            ThemeManager.ApplyThemeTo(this);
+            //ThemeManager.ApplyThemeTo(this);
         }
 
         private void HardwareConfig_FormClosing(object sender, FormClosingEventArgs e)

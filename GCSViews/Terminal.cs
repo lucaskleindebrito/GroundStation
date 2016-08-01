@@ -684,7 +684,7 @@ namespace MissionPlanner.GCSViews
             inlogview = true;
             Thread.Sleep(300);
             Form Log = new LogDownload();
-            ThemeManager.ApplyThemeTo(Log);
+            //ThemeManager.ApplyThemeTo(Log);
             Log.ShowDialog();
             inlogview = false;
         }
@@ -692,7 +692,7 @@ namespace MissionPlanner.GCSViews
         private void BUT_logbrowse_Click(object sender, EventArgs e)
         {
             Form logbrowse = new LogBrowse();
-            ThemeManager.ApplyThemeTo(logbrowse);
+            //ThemeManager.ApplyThemeTo(logbrowse);
             logbrowse.Show();
         }
 

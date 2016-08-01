@@ -162,7 +162,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                 RNG.ValueChanged += RNG_ValueChanged;
 
-                ThemeManager.ApplyThemeTo(RNG);
+                //ThemeManager.ApplyThemeTo(RNG);
 
                 panel1.Controls.Add(RNG);
 

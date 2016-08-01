@@ -110,7 +110,7 @@ namespace MissionPlanner.Controls
 
             myGMAP1.Invalidate();
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
 
             MissionPlanner.Utilities.Tracking.AddPage(this.GetType().ToString(), this.Text);
         }

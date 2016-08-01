@@ -360,7 +360,7 @@ namespace MissionPlanner.Log
         {
             InitializeComponent();
 
-            ThemeManager.ApplyThemeTo(this);
+            //ThemeManager.ApplyThemeTo(this);
 
             mapoverlay = new GMapOverlay("overlay");
             markeroverlay = new GMapOverlay("markers");

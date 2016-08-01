@@ -19,7 +19,7 @@ namespace MissionPlanner.Controls
         {
             InitializeComponent();
 
-            ThemeManager.ApplyThemeTo(this);
+            //ThemeManager.ApplyThemeTo(this);
 
             Load();
         }

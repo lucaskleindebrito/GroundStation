@@ -96,7 +96,7 @@ namespace MissionPlanner.Wizard
                 var valueControl = new RangeControl(x.Key, FitDescriptionText(units, description), displayName,
                     increment, displayscale, lowerRange, upperRange, value);
 
-                ThemeManager.ApplyThemeTo(valueControl);
+                //ThemeManager.ApplyThemeTo(valueControl);
 
                 valueControl.ValueChanged += valueControl_ValueChanged;
 
@@ -109,7 +109,7 @@ namespace MissionPlanner.Wizard
                 valueControl.DescriptionText = FitDescriptionText(units, description);
                 valueControl.LabelText = displayName;
 
-                ThemeManager.ApplyThemeTo(valueControl);
+                //ThemeManager.ApplyThemeTo(valueControl);
 
                 valueControl.ComboBoxControl.DisplayMember = "Value";
                 valueControl.ComboBoxControl.ValueMember = "Key";

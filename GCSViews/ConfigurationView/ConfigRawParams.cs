@@ -197,7 +197,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                         var textControls = Controls.Find(value, true);
                         if (textControls.Length > 0)
                         {
-                            ThemeManager.ApplyThemeTo(textControls[0]);
+                            //ThemeManager.ApplyThemeTo(textControls[0]);
                         }
                     }
                     catch
@@ -211,7 +211,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                         {
                             if (row.Cells[0].Value.ToString() == value)
                             {
-                                row.Cells[1].Style.BackColor = ThemeManager.ControlBGColor;
+                                row.Cells[1].Style.BackColor = Color.White;
                                 _changes.Remove(value);
                                 break;
                             }
@@ -247,7 +247,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                     Form paramCompareForm = new ParamCompare(Params, MainV2.comPort.MAV.param, param2);
 
-                    ThemeManager.ApplyThemeTo(paramCompareForm);
+                    //ThemeManager.ApplyThemeTo(paramCompareForm);
                     paramCompareForm.ShowDialog();
                 }
             }
@@ -492,7 +492,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                 Form paramCompareForm = new ParamCompare(Params, MainV2.comPort.MAV.param, param2);
 
-                ThemeManager.ApplyThemeTo(paramCompareForm);
+                //ThemeManager.ApplyThemeTo(paramCompareForm);
                 if (paramCompareForm.ShowDialog() == DialogResult.OK)
                 {
                     CustomMessageBox.Show("Loaded parameters, please make sure you write them!", "Loaded");

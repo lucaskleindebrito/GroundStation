@@ -471,7 +471,7 @@ namespace MissionPlanner.GCSViews
 
             tabStatus.Width = x;
 
-            ThemeManager.ApplyThemeTo(tabStatus);
+            //ThemeManager.ApplyThemeTo(tabStatus);
         }
 
         private void MainV2_AdvancedChanged(object sender, EventArgs e)
@@ -2044,7 +2044,7 @@ namespace MissionPlanner.GCSViews
         private void BUT_RAWSensor_Click(object sender, EventArgs e)
         {
             Form temp = new RAW_Sensor();
-            ThemeManager.ApplyThemeTo(temp);
+            //ThemeManager.ApplyThemeTo(temp);
             temp.Show();
         }
 
@@ -2563,14 +2563,14 @@ namespace MissionPlanner.GCSViews
         private void BUT_log2kml_Click(object sender, EventArgs e)
         {
             Form frm = new MavlinkLog();
-            ThemeManager.ApplyThemeTo(frm);
+            //ThemeManager.ApplyThemeTo(frm);
             frm.Show();
         }
 
         private void BUT_joystick_Click(object sender, EventArgs e)
         {
             Form joy = new JoystickSetup();
-            ThemeManager.ApplyThemeTo(joy);
+            //ThemeManager.ApplyThemeTo(joy);
             joy.Show();
         }
 
@@ -2746,7 +2746,7 @@ namespace MissionPlanner.GCSViews
                 selectform.Controls.Add(chk_box);
             }
 
-            ThemeManager.ApplyThemeTo(selectform);
+            //ThemeManager.ApplyThemeTo(selectform);
 
             y += 20;
 
@@ -2780,7 +2780,7 @@ namespace MissionPlanner.GCSViews
 
                 CheckBox chk_box = new CheckBox();
 
-                ThemeManager.ApplyThemeTo(chk_box);
+                //ThemeManager.ApplyThemeTo(chk_box);
 
                 if (list1item != null && list1item.Name == field.Name)
                 {
@@ -2872,7 +2872,7 @@ namespace MissionPlanner.GCSViews
                 MinimizeBox = false,
                 AutoScroll = true
             };
-            ThemeManager.ApplyThemeTo(selectform);
+            //ThemeManager.ApplyThemeTo(selectform);
 
             object thisBoxed = MainV2.comPort.MAV.cs;
             Type test = thisBoxed.GetType();
@@ -3085,7 +3085,7 @@ namespace MissionPlanner.GCSViews
                     CustomMessageBox.Show("Max 10 at a time.");
                     ((CheckBox) sender).Checked = false;
                 }
-                ThemeManager.ApplyThemeTo(this);
+                //ThemeManager.ApplyThemeTo(this);
 
                 string selected = "";
                 try
@@ -3247,7 +3247,7 @@ namespace MissionPlanner.GCSViews
                 MinimizeBox = false,
                 AutoScroll = true
             };
-            ThemeManager.ApplyThemeTo(selectform);
+            //ThemeManager.ApplyThemeTo(selectform);
 
             object thisBoxed = MainV2.comPort.MAV.cs;
             Type test = thisBoxed.GetType();
@@ -3391,7 +3391,7 @@ namespace MissionPlanner.GCSViews
 
                     splitContainer1.Panel2.Controls.Add(but);
                     splitContainer1.Panel2.Controls.Add(sc.Control);
-                    ThemeManager.ApplyThemeTo(sc.Control);
+                    //ThemeManager.ApplyThemeTo(sc.Control);
 
                     sc.Control.Dock = DockStyle.Fill;
                     sc.Control.Visible = true;
@@ -3593,7 +3593,7 @@ namespace MissionPlanner.GCSViews
         private void BUT_logbrowse_Click(object sender, EventArgs e)
         {
             Form logbrowse = new LogBrowse();
-            ThemeManager.ApplyThemeTo(logbrowse);
+            //ThemeManager.ApplyThemeTo(logbrowse);
             logbrowse.Show();
         }
 
@@ -3675,7 +3675,7 @@ namespace MissionPlanner.GCSViews
 
                 ScriptConsole console = new ScriptConsole();
                 console.SetScript(script);
-                ThemeManager.ApplyThemeTo(console);
+                //ThemeManager.ApplyThemeTo(console);
                 console.Show();
                 console.BringToFront();
                 components.Add(console);
@@ -4241,7 +4241,7 @@ namespace MissionPlanner.GCSViews
                         left.Items.Add(tabPage.Name, false);
                 }
 
-                ThemeManager.ApplyThemeTo(customForm);
+                //ThemeManager.ApplyThemeTo(customForm);
 
                 customForm.ShowDialog();
 
@@ -4285,7 +4285,7 @@ namespace MissionPlanner.GCSViews
                 }
             }
 
-            ThemeManager.ApplyThemeTo(tabControlactions);
+            //ThemeManager.ApplyThemeTo(tabControlactions);
         }
 
         private void saveTabControlActions()

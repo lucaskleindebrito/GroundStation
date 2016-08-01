@@ -39,7 +39,7 @@ namespace MissionPlanner.Controls.PreFlight
                 }
             }
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
         }
 
         CheckListInput addwarningcontrol(int x, int y, CheckListItem item, bool hideforchild = false)

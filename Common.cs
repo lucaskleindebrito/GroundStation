@@ -361,7 +361,7 @@ union px4_custom_mode {
             form.MinimizeBox = false;
             form.MaximizeBox = false;
 
-            ThemeManager.ApplyThemeTo(form);
+            //ThemeManager.ApplyThemeTo(form);
 
             form.Show();
             form.Refresh();
@@ -417,7 +417,7 @@ union px4_custom_mode {
             form.MinimizeBox = false;
             form.MaximizeBox = false;
 
-            ThemeManager.ApplyThemeTo(form);
+            //ThemeManager.ApplyThemeTo(form);
 
             DialogResult dialogResult = form.ShowDialog();
 

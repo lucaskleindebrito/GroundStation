@@ -367,7 +367,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                             ((RangeControl) items[0]).ValueChanged -= Control_ValueChanged;
                             ((RangeControl) items[0]).DeAttachEvents();
                             ((RangeControl) items[0]).Value = value;
-                            ThemeManager.ApplyThemeTo(((RangeControl) items[0]));
+                            //ThemeManager.ApplyThemeTo(((RangeControl) items[0]));
                             ((RangeControl) items[0]).AttachEvents();
                             ((RangeControl) items[0]).ValueChanged += Control_ValueChanged;
                             return;
@@ -445,7 +445,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                             //Console.WriteLine("{0} {1} {2} {3} {4}", x.Key, increment, lowerRange, upperRange, value);
 
-                            ThemeManager.ApplyThemeTo(rangeControl);
+                            //ThemeManager.ApplyThemeTo(rangeControl);
 
                             if (intValue < lowerRange)
                                 rangeControl.NumericUpDownControl.BackColor = Color.Orange;
@@ -483,7 +483,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                             bitmask.label1.Text = FitDescriptionText(units, description, tableLayoutPanel1.Width-50);
                             bitmask.Width = tableLayoutPanel1.Width - 50;
 
-                            ThemeManager.ApplyThemeTo(bitmask);
+                            //ThemeManager.ApplyThemeTo(bitmask);
 
                             // set pos
                             bitmask.Location = new Point(0, y);
@@ -515,7 +515,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                                     tableLayoutPanel1.Width);
                                 valueControl.LabelText = displayName;
 
-                                ThemeManager.ApplyThemeTo(valueControl);
+                                //ThemeManager.ApplyThemeTo(valueControl);
 
                                 var splitValues = new List<KeyValuePair<string, string>>();
                                 // Add the values to the ddl

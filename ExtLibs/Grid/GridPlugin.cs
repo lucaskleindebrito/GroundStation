@@ -67,7 +67,7 @@ namespace MissionPlanner
         {
             using (var gridui = new GridUI(this))
             {
-                MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(gridui);
+                //MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(gridui);
 
                 if (Host.FPDrawnPolygon != null && Host.FPDrawnPolygon.Points.Count > 2)
                 {

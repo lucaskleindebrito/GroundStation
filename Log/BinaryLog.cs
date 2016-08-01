@@ -71,7 +71,7 @@ namespace MissionPlanner.Log
 
             this.convertstatus += BinaryLog_convertstatus;
 
-            ThemeManager.ApplyThemeTo(prd);
+            //ThemeManager.ApplyThemeTo(prd);
 
             prd.RunBackgroundOperationAsync();
 

@@ -27,7 +27,7 @@ namespace MissionPlanner
             CMB_serialport.Items.Add("UDP");
             CMB_serialport.Items.Add("UDPCl");
 
-            ThemeManager.ApplyThemeTo(this);
+            //ThemeManager.ApplyThemeTo(this);
 
             MissionPlanner.Utilities.Tracking.AddPage(this.GetType().ToString(), this.Text);
         }

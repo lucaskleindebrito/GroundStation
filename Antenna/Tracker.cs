@@ -29,7 +29,7 @@ namespace MissionPlanner.Antenna
         {
             InitializeComponent();
 
-            ThemeManager.ApplyThemeTo(this);
+            //ThemeManager.ApplyThemeTo(this);
 
             CMB_serialport.DataSource = SerialPort.GetPortNames();
 

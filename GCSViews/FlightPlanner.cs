@@ -1760,7 +1760,7 @@ namespace MissionPlanner.GCSViews
             frmProgressReporter.DoWork += getWPs;
             frmProgressReporter.UpdateProgressAndStatus(-1, "Receiving WP's");
 
-            ThemeManager.ApplyThemeTo(frmProgressReporter);
+            //ThemeManager.ApplyThemeTo(frmProgressReporter);
 
             frmProgressReporter.RunBackgroundOperationAsync();
 
@@ -1938,7 +1938,7 @@ namespace MissionPlanner.GCSViews
             frmProgressReporter.DoWork += saveWPs;
             frmProgressReporter.UpdateProgressAndStatus(-1, "Sending WP's");
 
-            ThemeManager.ApplyThemeTo(frmProgressReporter);
+            //ThemeManager.ApplyThemeTo(frmProgressReporter);
 
             frmProgressReporter.RunBackgroundOperationAsync();
 
@@ -5253,7 +5253,7 @@ namespace MissionPlanner.GCSViews
             writeKML();
             double homealt = MainV2.comPort.MAV.cs.HomeAlt;
             Form temp = new ElevationProfile(pointlist, homealt, (altmode) CMB_altmode.SelectedValue);
-            ThemeManager.ApplyThemeTo(temp);
+            //ThemeManager.ApplyThemeTo(temp);
             temp.ShowDialog();
         }
 

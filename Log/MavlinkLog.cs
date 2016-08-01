@@ -729,7 +729,7 @@ namespace MissionPlanner.Log
                     try
                     {
                         // fix new line types
-                        ThemeManager.ApplyThemeTo(this);
+                        //ThemeManager.ApplyThemeTo(this);
 
                         zg1.Invalidate();
                         zg1.AxisChange();
@@ -1366,7 +1366,7 @@ namespace MissionPlanner.Log
             try
             {
                 // fix new line types
-                ThemeManager.ApplyThemeTo(this);
+                //ThemeManager.ApplyThemeTo(this);
 
                 zg1.GraphPane.XAxis.AxisGap = 0;
 
@@ -1400,7 +1400,7 @@ namespace MissionPlanner.Log
             AddHeader(selectform, "Right Click");
             AddHeader(selectform, "Right Axis");
 
-            ThemeManager.ApplyThemeTo(selectform);
+            //ThemeManager.ApplyThemeTo(selectform);
 
             return selectform;
         }

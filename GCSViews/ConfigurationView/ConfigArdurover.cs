@@ -153,7 +153,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                             thisctl.Enabled = true;
 
-                            ThemeManager.ApplyThemeTo(thisctl);
+                            //ThemeManager.ApplyThemeTo(thisctl);
 
                             thisctl.Validated += null;
                             if (tooltips[value] != null)
@@ -176,7 +176,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                             thisctl.Validated += ComboBox_Validated;
 
-                            ThemeManager.ApplyThemeTo(thisctl);
+                            //ThemeManager.ApplyThemeTo(thisctl);
                         }
                     }
                     catch

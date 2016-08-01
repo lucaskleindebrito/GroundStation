@@ -226,7 +226,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                     paramCompareForm.dtlvcallback += paramCompareForm_dtlvcallback;
 
-                    ThemeManager.ApplyThemeTo(paramCompareForm);
+                    //ThemeManager.ApplyThemeTo(paramCompareForm);
                     paramCompareForm.ShowDialog();
                 }
             }
@@ -440,7 +440,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
                 paramCompareForm.dtlvcallback += paramCompareForm_dtlvcallback;
 
-                ThemeManager.ApplyThemeTo(paramCompareForm);
+                //ThemeManager.ApplyThemeTo(paramCompareForm);
                 if (paramCompareForm.ShowDialog() == DialogResult.OK)
                 {
                     CustomMessageBox.Show("Loaded parameters, please make sure you write them!", "Loaded");

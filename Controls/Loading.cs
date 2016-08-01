@@ -78,7 +78,7 @@ namespace MissionPlanner.Controls
                 frm.TopMost = true;
                 frm.StartPosition = FormStartPosition.CenterParent;
 
-                ThemeManager.ApplyThemeTo(frm);
+                //ThemeManager.ApplyThemeTo(frm);
 
                 MainV2.instance.Invoke((MethodInvoker) delegate
                 {

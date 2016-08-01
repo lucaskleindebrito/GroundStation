@@ -203,7 +203,7 @@ namespace MissionPlanner.Utilities
                 StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
             };
 
-            ThemeManager.ApplyThemeTo(frmProgressReporter);
+            //ThemeManager.ApplyThemeTo(frmProgressReporter);
 
             frmProgressReporter.DoWork += new ProgressReporterDialogue.DoWorkEventHandler(DoUpdateWorker_DoWork);
 

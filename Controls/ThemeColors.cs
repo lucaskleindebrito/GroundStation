@@ -16,7 +16,7 @@ namespace MissionPlanner.Controls
         {
             InitializeComponent();
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
         }
 
         private void BUT_bg_Click(object sender, EventArgs e)

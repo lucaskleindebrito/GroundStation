@@ -39,10 +39,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             CMB_distunits.DataSource = Enum.GetNames(typeof (Common.distances));
             CMB_speedunits.DataSource = Enum.GetNames(typeof (Common.speeds));
 
-            CMB_theme.DataSource = Enum.GetNames(typeof (ThemeManager.Themes));
-
-            CMB_theme.Text = ThemeManager.CurrentTheme.ToString();
-
             // setup language selection
             var cultureCodes = new[]
             {"en-US", "zh-Hans", "zh-TW", "ru-RU", "Fr", "Pl", "it-IT", "es-ES", "de-DE", "ja-JP", "id-ID", "ko-KR"};
@@ -451,7 +447,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         private void BUT_Joystick_Click(object sender, EventArgs e)
         {
             Form joy = new JoystickSetup();
-            ThemeManager.ApplyThemeTo(joy);
+            //ThemeManager.ApplyThemeTo(joy);
             joy.Show();
         }
 
@@ -671,25 +667,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 Settings.Instance.LogDir = path;
             }
         }
-
-        private void CMB_theme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (startup)
-                return;
-
-            Settings.Instance["theme"] = CMB_theme.Text;
-            ThemeManager.SetTheme((ThemeManager.Themes) Enum.Parse(typeof (ThemeManager.Themes), CMB_theme.Text));
-            ThemeManager.ApplyThemeTo(MainV2.instance);
-
-            CustomMessageBox.Show("You may need to restart to see the full effect.");
-        }
-
-        private void BUT_themecustom_Click(object sender, EventArgs e)
-        {
-            ThemeManager.CustomColor();
-            CMB_theme.Text = "Custom";
-        }
-
+        
         private void CHK_speecharmdisarm_CheckedChanged(object sender, EventArgs e)
         {
             if (startup)

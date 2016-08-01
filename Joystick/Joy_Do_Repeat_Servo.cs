@@ -15,7 +15,7 @@ namespace MissionPlanner.Joystick
         {
             InitializeComponent();
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
 
             this.Tag = name;
 

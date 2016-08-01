@@ -15,7 +15,7 @@ namespace MissionPlanner.Controls
         {
             InitializeComponent();
 
-            Utilities.ThemeManager.ApplyThemeTo(this);
+            //Utilities.ThemeManager.ApplyThemeTo(this);
 
             timer1.Start();
         }
@@ -33,7 +33,7 @@ namespace MissionPlanner.Controls
             ekfterrain.Value = (int) (MainV2.comPort.MAV.cs.ekfteralt*100);
 
             // restore colours
-            Utilities.ThemeManager.ApplyThemeTo(this);
+           // Utilities.ThemeManager.ApplyThemeTo(this);
 
             foreach (var item in new VerticalProgressBar2[] {ekfvel, ekfposh, ekfposv, ekfcompass, ekfterrain})
             {

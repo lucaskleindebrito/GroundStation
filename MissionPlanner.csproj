@@ -3174,7 +3174,6 @@
       <DependentUpon>temp.cs</DependentUpon>
     </Compile>
     <Compile Include="Radio\Uploader.cs" />
-    <Compile Include="Utilities\ThemeManager.cs" />
     <Compile Include="Utilities\ParameterMetaDataParser.cs" />
     <Compile Include="Utilities\ParameterMetaDataRepository.cs" />
     <EmbeddedResource Include="Antenna\Tracker.de-DE.resx">

@@ -65,7 +65,7 @@ namespace MissionPlanner
         {
             using (var gridui = new GridUIv2(this))
             {
-                MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(gridui);
+                //MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(gridui);
 
                 gridui.ShowDialog();
             }
